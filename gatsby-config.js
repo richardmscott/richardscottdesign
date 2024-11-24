@@ -2,6 +2,9 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  flags: {
+    DEV_SSR: true
+  },
   siteMetadata: {
     title: `Richard Scott Design`,
     siteUrl: `https://rscottdesign.co.uk`
@@ -22,15 +25,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
-      }
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: `work`,
-        path: `${__dirname}/work`,
+        path: `${__dirname}/posts`,
       }
     },
     {
@@ -38,8 +34,7 @@ module.exports = {
     options: {
       "name": "pages",
       "path": "./src/pages/"
-    },
-    __key: "pages"
+    }
     },
     "gatsby-plugin-mdx",
     {
