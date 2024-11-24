@@ -27,6 +27,13 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `work`,
+        path: `${__dirname}/work`,
+      }
+    },
+    {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "pages",
@@ -35,5 +42,14 @@ module.exports = {
     __key: "pages"
     },
     "gatsby-plugin-mdx",
+    {
+          resolve: `gatsby-plugin-google-fonts`,
+          options: {
+              fonts: [
+                  `Poppins\:400,700`, // You can specify weights and styles
+              ],
+              display: 'swap', // Optional font-display property
+          },
+      },
   ]
 };

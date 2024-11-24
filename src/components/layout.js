@@ -20,6 +20,7 @@ const Layout = ({ pageTitle, children }) => {
       <nav>
         <ul className="flex p-4 space-x-4">
           <li><Link to="/about">About</Link></li>
+          <li><Link to="/work">Work</Link></li>
           <li><Link to="/blog">Blog</Link></li>
         </ul>
       </nav>

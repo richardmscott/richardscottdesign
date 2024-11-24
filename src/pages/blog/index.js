@@ -22,7 +22,10 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
 query MyQuery {
-  allMdx(sort: { frontmatter: { date: DESC } }) {
+  allMdx(
+    sort: {frontmatter: {date: DESC}}
+    filter: {internal: {contentFilePath: {regex: "/blog/\/"}}}
+  ) {
     nodes {
       body
       frontmatter {
