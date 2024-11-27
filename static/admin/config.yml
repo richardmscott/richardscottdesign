@@ -12,6 +12,7 @@ collections:
     folder: 'posts'
     create: true
     extension: 'mdx'
+    format: "frontmatter" # MDX files use frontmatter
     slug: 'index'
     media_folder: ''
     public_folder: ''
