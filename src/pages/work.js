@@ -7,14 +7,14 @@ import { Link, graphql } from 'gatsby'
 const WorkPage = ({ data }) => {
   return (
     <Layout pageTitle="My work">
-      <div class="flex space-x-4">
+      <div className="flex space-x-4 p-4">
         {
           data.allMdx.nodes.map(node => {
-          const image = getImage(node.frontmatter.hero_image);
+          const img = getImage(node.frontmatter.hero_image);
           return (
-            <article className="block mb-6" key="{node.id}">
-              <GatsbyImage image={image} alt={node.frontmatter.hero_image_alt} />
-              <Link to={node.frontmatter.slug} className="block font-bold">{node.frontmatter.title}</Link>
+            <article className="mb-6 w-full" key="{node.id}">
+              {img &&<GatsbyImage image={img} alt={node.frontmatter.hero_image_alt} />}
+              <Link to={node.frontmatter.slug} className="block font-bold mt-2">{node.frontmatter.title}</Link>
               <date className="block mb-3">{node.frontmatter.date}</date>
               <p>{node.excerpt}</p>
             </article>

@@ -8,17 +8,20 @@ import {cms} from '../../components/layout.module.css'
 const Post = ({ data, children }) => {
   const img = getImage(data.mdx.frontmatter.hero_image)
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
-      <div className={cms} >
-        <p className="font-bold">{data.mdx.frontmatter.date}</p>
+    <Layout pageTitle={data.mdx.frontmatter.title} pageTitleVisible={true}>
+      <div className={cms}>
+        <p className="font-bold px-4">{data.mdx.frontmatter.date}</p>
         {img && <GatsbyImage image={img} alt={data.mdx.frontmatter.hero_image_alt} />}
-        <p>
+        <p className="p-4">
         Photo Credit:{" "}
         <a href={data.mdx.frontmatter.hero_image_credit_link}>
           {data.mdx.frontmatter.hero_image_credit_text}
         </a>
-      </p>
-        {children}
+        </p>
+        <div className="p-4">
+          {children}
+          <p><span>Type: </span>{data.mdx.frontmatter.type}</p>
+        </div>
         </div>
     </Layout>
   )
@@ -29,6 +32,7 @@ export const query = graphql`
     mdx(id: {eq: $id}) {
       frontmatter {
         title
+        type
         date(formatString: "MMMM D, YYYY")
         hero_image_alt
         hero_image_credit_link
