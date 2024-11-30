@@ -18,7 +18,7 @@ const IndexPage = () => {
           <div className="w-full p-4 md:w-1/2 relative">
             <div className="max-w-7xl border-solid border-white">
             <h2 className="text-5xl font-bold mb-4">Test</h2>
-          <p className="text-lg">Testing 123 testing 123</p>
+          <p className="text-lg mb-2">Testing 123 testing 123</p>
               <Cake buttonLink="/about">Test 2</Cake>
               </div>
         </div>
